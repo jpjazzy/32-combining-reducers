@@ -9,13 +9,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <section>
-        <h1>Welcome to my Expense list</h1>
+        <h1>J-Expense list</h1>
 
         <CategoryForm
           buttonText='Create category'
           onComplete={this.props.dashboardCategoryCreate}/>
-
-        {/* {console.log(this.props.categories)} */}
         {this.props.categories ?
           this.props.categories.map(cat => {
             return <CategoryItem key={cat._id} cat={cat}/>;

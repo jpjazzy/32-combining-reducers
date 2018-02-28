@@ -4,6 +4,7 @@ _Author_: Jeremy Pearson
 _Version_: 1.0.0
 
 _Libraries_: 
+
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",

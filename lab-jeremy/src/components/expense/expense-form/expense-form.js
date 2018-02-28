@@ -36,6 +36,7 @@ class ExpenseForm extends React.Component {
           value={this.state.name}
           placeholder="Expense name..."
           required="true"
+          autoComplete="off"
           onChange={this.handleChange}/>
 
         <input

@@ -36,6 +36,7 @@ class CategoryForm extends React.Component {
           value={this.state.title}
           placeholder="Category name..."
           required="true"
+          autoComplete="off"
           onChange={this.handleChange}/>
 
         <input

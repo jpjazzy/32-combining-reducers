@@ -24,7 +24,6 @@ class ExpenseItem extends React.Component{
   }
 
   handleDelete() {
-    console.log('SHOULD DELETE EXPENSE WITH OBJ:', this.props.expense);
     this.props.ExpenseItemExpenseDelete(this.props.expense);
   }
   
