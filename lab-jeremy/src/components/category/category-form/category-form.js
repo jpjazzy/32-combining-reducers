@@ -22,9 +22,9 @@ class CategoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     this.props.onComplete(this.state);
     this.setState({title: '', budget: 0});
+    document.getElementsByName('title')[0].focus();
   }
 
   render() {
@@ -42,6 +42,7 @@ class CategoryForm extends React.Component {
         <input
           type="number"
           name="budget"
+          min="0"
           value={this.state.budget}
           placeholder="Budget..."
           required="true"

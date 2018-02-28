@@ -25,6 +25,7 @@ class ExpenseForm extends React.Component {
     e.preventDefault();
     this.props.onComplete(this.state);
     this.setState({name: '', price: 0});
+    document.getElementsByName('name')[0].focus(); // Reset to primary input
   }
 
   render() {
@@ -42,6 +43,7 @@ class ExpenseForm extends React.Component {
         <input
           type="number"
           name="price"
+          min="0"
           value={this.state.price}
           placeholder="price..."
           required="true"

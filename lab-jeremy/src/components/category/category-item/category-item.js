@@ -38,7 +38,6 @@ class CategoryItem extends React.Component{
   }
 
   handleCalcBalance(budget, expenses) {
-    console.log(expenses);
     return budget - expenses.reduce((a, b) => a + parseInt(b.price), 0);
   }
   

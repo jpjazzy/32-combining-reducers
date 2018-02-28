@@ -73,6 +73,11 @@ input {
     border: 3px solid $primary-color;
     transition: 350ms all;
   }
+
+  &:hover {
+    border: 1px solid $primary-color;
+    transition: 350ms all;
+  }
 }
 
 button {
