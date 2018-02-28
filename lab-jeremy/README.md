@@ -34,7 +34,9 @@ _Last modified_: 2/27/2018
 
 Launch a webpack build to create a live server and go to the main / route to view the dashboard.
 
-Input a category and budget to get started on making a list of categories and budgets!
+Input a category and budget to get started on making a list of categories and budgets.
+
+Input an expense and price to add them to the budget. (no math yet!)
 
 # Lab Readme (SPECS)
 
