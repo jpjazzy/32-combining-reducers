@@ -24,6 +24,8 @@ div {
 
 ul {
   li {
+    padding: 5px;
+    border: 2px solid $primary-color; 
     margin: 10px;
     display: inline-block;
     font-size: 12px;
@@ -32,8 +34,14 @@ ul {
 }
 
 .category-item {
-  border: 1px solid white;
+  border: 1px solid $secondary-color;
   margin: 10px;
+}
+
+.category-item {
+  p:first-of-type {
+    border-bottom: 1px dashed $secondary-color;
+  }
 }
 
 .cat-delete-button{

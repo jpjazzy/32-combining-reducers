@@ -26,7 +26,7 @@ class ExpenseItem extends React.Component{
       <li onDoubleClick={this.handleDouble}>
         <p>Expense: {this.props.expense.name}</p>
         <p>Price: ${this.props.expense.price}</p>
-        <button type="button" onClick={this.handleDelete}>Delete</button>
+        <button type="button" onClick={this.handleDelete}>X</button>
       </li>
     );
   }
