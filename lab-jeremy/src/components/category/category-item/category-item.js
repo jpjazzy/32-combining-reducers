@@ -46,9 +46,6 @@ class CategoryItem extends React.Component{
 
         {renderIf(!this.state.editing, <h3 onDoubleClick={this.handleUpdateForm}>Category: {this.props.cat.title}</h3>)}
         {renderIf(!this.state.editing, <p onDoubleClick={this.handleUpdateForm}>Budget: ${this.props.cat.budget}</p>)}
-        
-
-        <button className="cat-delete-button" type="button" onClick={this.handleDelete}>Delete category</button>
         <ul>
           {renderIf(this.props.expenses[this.props.cat._id], this.props.expenses[this.props.cat._id].map(expense => {
             return <ExpenseItem key={expense._id} expense={expense}/>;
@@ -58,6 +55,8 @@ class CategoryItem extends React.Component{
           category={this.props.cat}
           buttonText='Add expense'
           onComplete={this.handleAddExpense}/>
+
+        <button className="cat-delete-button" type="button" onClick={this.handleDelete}>Delete category</button>
       </div>
     );
   }
