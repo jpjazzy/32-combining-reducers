@@ -30,13 +30,13 @@ class ExpenseItem extends React.Component{
   render(){
     return(
       <li onDoubleClick={this.handleEditing}>
-        <p>Expense: {this.props.expense.name}</p>
-        <p>Price: ${this.props.expense.price}</p>
-        <button type="button" onClick={this.handleDelete}>X</button>
+        {renderIf(!this.state.editing, <p>Expense: {this.props.expense.name}</p>)}
+        {renderIf(!this.state.editing, <p>Price: ${this.props.expense.price}</p>)}
         {renderIf(this.state.editing, <ExpenseForm
           expense={this.props.expense}
           buttonText="Update expense"
           onComplete={this.handleUpdate}/>)}
+        <button type="button" onClick={this.handleDelete}>X</button>
       </li>
     );
   }

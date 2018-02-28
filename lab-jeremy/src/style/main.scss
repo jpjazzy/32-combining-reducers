@@ -25,7 +25,9 @@ div {
 
 ul {
   li {
-    padding: 5px;
+    border-top-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    padding: 10px;
     border: 2px solid $secondary-color; 
     margin: 10px;
     display: inline-block;
@@ -66,12 +68,34 @@ input {
   background: $tertiary-color;
   color: $secondary-color;
   margin: 5px;
+
+  &:focus {
+    border: 3px solid $primary-color;
+    transition: 350ms all;
+  }
 }
 
 button {
+  background: $tertiary-color;
+  color: $secondary-color;
   border-radius: 3px;
   font-size: 12px;
   font-weight: bold;
   border: none;
-  margin: 5px;
+  margin: 2px;
+  padding: 5px;
+  transition: 150ms all;
+
+  &:hover {
+    color: $primary-color;
+    transition: 150ms all;
+  }
+}
+
+.negative {
+  color: red;
+}
+
+.positive {
+  color: green;
 }

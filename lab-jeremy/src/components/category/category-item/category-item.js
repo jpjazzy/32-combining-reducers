@@ -16,6 +16,7 @@ class CategoryItem extends React.Component{
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleUpdateForm = this.handleUpdateForm.bind(this);
     this.handleAddExpense = this.handleAddExpense.bind(this);
+    this.handleCalcBalance = this.handleCalcBalance.bind(this);
   }
 
   handleUpdateForm() {
@@ -35,6 +36,11 @@ class CategoryItem extends React.Component{
   handleAddExpense(expense) {
     this.props.CategoryItemExpenseCreate(expense);
   }
+
+  handleCalcBalance(budget, expenses) {
+    console.log(expenses);
+    return budget - expenses.reduce((a, b) => a + parseInt(b.price), 0);
+  }
   
   render(){
     return(
@@ -43,19 +49,23 @@ class CategoryItem extends React.Component{
           category={this.props.cat}
           buttonText='Update category'
           onComplete={this.handleUpdate}/>)}
-
         {renderIf(!this.state.editing, <h3 onDoubleClick={this.handleUpdateForm}>Category: {this.props.cat.title}</h3>)}
         {renderIf(!this.state.editing, <p onDoubleClick={this.handleUpdateForm}>Budget: ${this.props.cat.budget}</p>)}
+        {renderIf(!this.state.editing, <p className={this.handleCalcBalance(this.props.cat.budget,  this.props.expenses[this.props.cat._id]) > 0 ? 'positive' : 'negative'} onDoubleClick={this.handleUpdateForm}>Remaining: ${this.handleCalcBalance(this.props.cat.budget,  this.props.expenses[this.props.cat._id])}</p>)}
         <ul>
           {renderIf(this.props.expenses[this.props.cat._id], this.props.expenses[this.props.cat._id].map(expense => {
             return <ExpenseItem key={expense._id} expense={expense}/>;
           }))}
         </ul>
-        <ExpenseForm 
-          category={this.props.cat}
-          buttonText='Add expense'
-          onComplete={this.handleAddExpense}/>
-
+        {renderIf(this.handleCalcBalance(this.props.cat.budget,  this.props.expenses[this.props.cat._id]) > 0, 
+          <ExpenseForm 
+            category={this.props.cat}
+            buttonText='Add expense'
+            onComplete={this.handleAddExpense}/>
+        )}
+        {renderIf(!this.handleCalcBalance(this.props.cat.budget,  this.props.expenses[this.props.cat._id]) > 0, 
+          <p className="negative" >You're over budget</p>
+        )}
         <button className="cat-delete-button" type="button" onClick={this.handleDelete}>Delete category</button>
       </div>
     );
