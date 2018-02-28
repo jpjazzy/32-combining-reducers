@@ -23,7 +23,6 @@ class ExpenseForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
     this.props.onComplete(this.state);
     this.setState({name: '', price: 0});
   }

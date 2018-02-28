@@ -41,7 +41,7 @@ class CategoryItem extends React.Component{
       <div className="category-item" key={this.props.cat._id}>
         {renderIf(this.state.editing, <CategoryForm
           category={this.props.cat}
-          buttonText='Update'
+          buttonText='Update category'
           onComplete={this.handleUpdate}/>)}
 
         {renderIf(!this.state.editing, <h3 onDoubleClick={this.handleUpdateForm}>Category: {this.props.cat.title}</h3>)}

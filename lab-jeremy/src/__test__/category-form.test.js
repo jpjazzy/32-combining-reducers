@@ -16,7 +16,6 @@ describe('<CategoryForm />', function() {
     afterAll(() => this.wrapper.unmount());
 
     it('should render a category form component', () => {
-      console.log(this.wrapper.html());
       expect(this.wrapper.length).toBe(1);
       expect(this.wrapper.find('.category-form').length).toBe(1);
     });
@@ -27,7 +26,7 @@ describe('<CategoryForm />', function() {
 
     it('should change the state object when form input is provided', () => {
       let event = {target: { name: 'title', value: 'hello' }};
-      this.wrapper.find('.category-form input[name=title]').simulate('change', event);
+      this.wrapper.find('.category-form input[name="title"]').simulate('change', event);
       expect(this.wrapper.state().title).toEqual('hello');
     });
   });
