@@ -1,0 +1,55 @@
+/* App styles */
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: rgb(0, 13, 128);
+$secondary-color: white;
+$tertiary-color: black;
+
+body {
+  font: 100% $font-stack;
+  background: $tertiary-color;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-color;
+  font-size: 50px;
+}
+
+div {
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-color;
+}
+
+ul {
+  li {
+    margin: 10px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+.category-item {
+  border: 1px solid white;
+  margin: 10px;
+}
+
+.cat-delete-button{
+  float: right;
+}
+
+input[type="text"] {
+  border-radius: 3px;
+  background: rgb(179, 179, 179);
+  margin: 5px;
+}
+
+button {
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  margin: 5px;
+}
